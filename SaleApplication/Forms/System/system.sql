@@ -1,0 +1,39 @@
+CREATE SCHEMA [system]
+GO
+CREATE TABLE [system].[User](
+	UserId INT IDENTITY PRIMARY KEY,
+	UserName NVARCHAR(50) NOT NULL,
+	FullName NVARCHAR(100) NOT NULL,
+	Email NVARCHAR(100) NOT NULL,
+	Password NVARCHAR(100) NOT NULL,
+	Locked BIT NOT NULL,
+	ChangePasswordAtLogOn BIT NOT NULL,
+	Active BIT NOT NULL
+);
+
+CREATE TABLE [system].[Role](
+	RoleId INT IDENTITY PRIMARY KEY,
+	RoleName NVARCHAR(50) NOT NULL,
+	Active BIT NOT NULL
+);
+
+CREATE TABLE [system].[Permission](
+	PermissionId INT IDENTITY PRIMARY KEY,
+	PermissionName NVARCHAR(50) NOT NULL,
+	Note NVARCHAR(MAX) NOT NULL,
+	ParentId INT NOT NULL,
+	Active BIT NOT NULL
+);
+
+CREATE TABLE [system].[UserRole](
+	UserRoleId INT IDENTITY PRIMARY KEY,
+	UserId INT NOT NULL,
+	RoleId INT NOT NULL,
+	Active BIT NOT NULL
+);
+CREATE TABLE [system].[RolePermission](
+	RolePermissionId INT IDENTITY PRIMARY KEY,
+	RoleId INT NOT NULL,
+	PermissionId INT NOT NULL,
+	Active BIT NOT NULL
+)

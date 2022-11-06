@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCFDBC50-64FD-431B-8F06-B9878D1751C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PartyMemberManagementSystem</RootNamespace>
+    <AssemblyName>PMMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Cambodian_People%27s_Party_%28emblem%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbInterface\Helper\Cmd.cs" />
+    <Compile Include="DbInterface\Helper\ChangeLang.cs" />
+    <Compile Include="DbInterface\Helper\UI.cs" />
+    <Compile Include="DbInterface\Helper\Validator.cs" />
+    <Compile Include="Entity\Members.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyE.Designer.cs">
+      <DependentUpon>FormFamilyE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyN.Designer.cs">
+      <DependentUpon>FormFamilyN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamily.Designer.cs">
+      <DependentUpon>FormFamily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyStatus.Designer.cs">
+      <DependentUpon>FormFamilyStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyStatusNE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormFamilyStatusNE.Designer.cs">
+      <DependentUpon>FormFamilyStatusNE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormMemberNE2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormMemberNE2.Designer.cs">
+      <DependentUpon>FormMemberNE2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormStation.Designer.cs">
+      <DependentUpon>FormStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormStationNE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormStationNE.Designer.cs">
+      <DependentUpon>FormStationNE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormStationNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormStationNo.Designer.cs">
+      <DependentUpon>FormStationNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormVillage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormVillage.Designer.cs">
+      <DependentUpon>FormVillage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormVillageNE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormVillageNE.Designer.cs">
+      <DependentUpon>FormVillageNE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormGroup.Designer.cs">
+      <DependentUpon>FormGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormGroupNE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormGroupNE.Designer.cs">
+      <DependentUpon>FormGroupNE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormMember.Designer.cs">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormMemberList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormMemberList.Designer.cs">
+      <DependentUpon>FormMemberList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormMemberNE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormMemberNE.Designer.cs">
+      <DependentUpon>FormMemberNE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormRole.Designer.cs">
+      <DependentUpon>FormRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Member\FormRoleNE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Member\FormRoleNE.Designer.cs">
+      <DependentUpon>FormRoleNE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\FormList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\FormList.Designer.cs">
+      <DependentUpon>FormList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\FormList1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\FormList1.Designer.cs">
+      <DependentUpon>FormList1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\FormList2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\FormList2.Designer.cs">
+      <DependentUpon>FormList2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\FormList3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\FormList3.Designer.cs">
+      <DependentUpon>FormList3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Security\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Security\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Security\FormMemberData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Security\FormMemberData.Designer.cs">
+      <DependentUpon>FormMemberData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Security\FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Security\FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Security\FormUserNE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Security\FormUserNE.Designer.cs">
+      <DependentUpon>FormUserNE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Security\FormUserSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Security\FormUserSetting.Designer.cs">
+      <DependentUpon>FormUserSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PMMS_DB.cs">
+      <DependentUpon>PMMS_DB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PMMS_DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PMMS_DB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.km-KH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.km-KH.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportList.Designer.cs">
+      <DependentUpon>ReportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormFamily.resx">
+      <DependentUpon>FormFamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormFamilyE.resx">
+      <DependentUpon>FormFamilyE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormFamilyN.resx">
+      <DependentUpon>FormFamilyN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormFamilyStatus.resx">
+      <DependentUpon>FormFamilyStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormFamilyStatusNE.resx">
+      <DependentUpon>FormFamilyStatusNE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormGroup.resx">
+      <DependentUpon>FormGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormGroupNE.resx">
+      <DependentUpon>FormGroupNE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormMember.resx">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormMemberNE2.resx">
+      <DependentUpon>FormMemberNE2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormRole.resx">
+      <DependentUpon>FormRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormRoleNE.resx">
+      <DependentUpon>FormRoleNE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormStation.resx">
+      <DependentUpon>FormStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormStationNE.resx">
+      <DependentUpon>FormStationNE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormStationNo.resx">
+      <DependentUpon>FormStationNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormVillage.resx">
+      <DependentUpon>FormVillage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormMemberNE.resx">
+      <DependentUpon>FormMemberNE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Member\FormVillageNE.resx">
+      <DependentUpon>FormVillageNE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\FormList.resx">
+      <DependentUpon>FormList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\FormList1.resx">
+      <DependentUpon>FormList1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\FormList2.resx">
+      <DependentUpon>FormList2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\FormList3.resx">
+      <DependentUpon>FormList3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Security\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Security\FormMemberData.resx">
+      <DependentUpon>FormMemberData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Security\FormUserSetting.resx">
+      <DependentUpon>FormUserSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report1.rdlc" />
+    <EmbeddedResource Include="Report\ReportList.resx">
+      <DependentUpon>ReportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.km-KH.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.km-KH.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="PMMS_DB.xsc">
+      <DependentUpon>PMMS_DB.xsd</DependentUpon>
+    </None>
+    <None Include="PMMS_DB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PMMS_DB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PMMS_DB.xss">
+      <DependentUpon>PMMS_DB.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaleApplication\Security.vbproj">
+      <Project>{1a3e805e-f7e5-4b5a-a8c3-71aeb5fc7a0e}</Project>
+      <Name>Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\List4.rdlc" />
+    <EmbeddedResource Include="Report\List6.rdlc" />
+    <EmbeddedResource Include="Report\List7.rdlc" />
+    <EmbeddedResource Include="Report\List5.rdlc" />
+    <EmbeddedResource Include="Report\List3.rdlc" />
+    <EmbeddedResource Include="Report\List1.rdlc" />
+    <EmbeddedResource Include="Report\List2.rdlc" />
+    <None Include="Resources\20731113_1527594640637656_869733269_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cambodian_People%27s_Party_%28emblem%29.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
